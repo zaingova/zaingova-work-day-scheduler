@@ -24,18 +24,23 @@ $(function () {
 
   // loop through each time block
   for (var i = 0; i < timeBlock.length; i++) {
+    console.log(times);
+    console.log((times[i]) == today.format('HH'));
     // if current time is greater than the time of this timeblock...
-    if (times[i] < today.format('H')) {
+    if ((times[i]) < today.format('HH')) {
       $(timeBlock[i]).addClass("past");
+      console.log(timeBlock[i].getAttribute("id") + ", " + today.format('H'));
       // time value for this block is printed to the left in 24 hour format
       timeText[i].textContent = times[i] + ":00";
       // else if current time is equal to the time of this timeblock...
-    } else if (times[i] == today.format('H')) {
+    } else if ((times[i]) == today.format('HH')) {
       $(timeBlock[i]).addClass("present");
+      console.log(timeBlock[i].getAttribute("id") + ", " + today.format('H'));
       timeText[i].textContent = times[i] + ":00";
       // else -- current time is less than the time of this timeblock...
     } else {
       $(timeBlock[i]).addClass("future");
+      console.log(timeBlock[i].getAttribute("id") + ", " + today.format('H'));
       timeText[i].textContent = times[i] + ":00";
     }
   }
