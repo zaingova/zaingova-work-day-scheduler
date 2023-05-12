@@ -13,6 +13,7 @@ textarea {
 }
 
 .description {
+  font-weight: 900;
   white-space: pre-wrap;
 }
 
